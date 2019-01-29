@@ -1,4 +1,4 @@
 
-public class car {
+public abstract class car {
 
 }

@@ -1,7 +1,7 @@
 import javafx.scene.paint.Color;
 
 
-public abstract class car {
+public abstract class car implements Movable{
 	
 	public double enginePower; // Engine power of the car
 	public double currentSpeed; // The current speed of the car

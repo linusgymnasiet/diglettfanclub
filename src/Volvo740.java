@@ -11,24 +11,8 @@ public class Volvo740 extends car{
 		stopEngine();
 	}
 
-	
 	public double speedFactor() {
 		return enginePower * 0.01 * trimFactor;
 	}
 
-	public void incrementSpeed(double amount) {
-		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
-	}
-
-	public void decrementSpeed(double amount) {
-		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
-	}
-
-	public void gas(double amount) {
-		incrementSpeed(amount);
-	}
-
-	public void brake(double amount) {
-		decrementSpeed(amount);
-	}
 }

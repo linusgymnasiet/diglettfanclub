@@ -28,6 +28,23 @@ public abstract class car {
 		currentSpeed = 0;
 	}
 	
+	public abstract double speedFactor();
+	
+	public void incrementSpeed(double amount) {
+		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+	}
+
+	public void decrementSpeed(double amount) {
+		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+	}
+	
+	public void gas(double amount) {
+		incrementSpeed(amount);
+	}
+
+	public void brake(double amount) {
+		decrementSpeed(amount);
+	}
 }
 
 

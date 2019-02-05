@@ -13,25 +13,37 @@ public abstract class car implements Movable {
 	public double getEnginePower() {
 		return enginePower;
 	}
-
+	/**
+	 * Returns the current speed the car is traveling in 
+	 */
 	public double getCurrentSpeed() {
 		return currentSpeed;
 	}
-
+	/**
+	 * Returns the colour of the car
+	 */
 	public Color getColor() {
 		return color;
 	}
-
+	/**
+	 * Starts the engine
+	 */
 	public void startEngine() {
 		currentSpeed = 0.1;
 	}
-
+	/**
+	 * Stops the engine
+	 */
 	public void stopEngine() {
 		currentSpeed = 0;
 	}
-
+	
 	public abstract double speedFactor();
 
+	/**
+	 * 
+	 * @param amount
+	 */
 	public void incrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 	}
@@ -50,7 +62,7 @@ public abstract class car implements Movable {
 
 	@Override
 	public void move() {
-		if (dir==0) {
+		if (dir==0) {  //checking what direction the car currently is moving and moves it accordingly
 			xpos -= currentSpeed;
 		} else if (dir==1) {
 			ypos += currentSpeed;
@@ -59,14 +71,14 @@ public abstract class car implements Movable {
 		} else if (dir==3) {
 			ypos -= currentSpeed;
 		} else {
-			System.out.println("unvalid direction");
+			System.out.println("unvalid direction"); //in the rare case that something goes wrong
 		}
 	}
 
 	@Override
 	public void turnLeft() {
 		dir--;
-		if (dir < 0) {
+		if (dir < 0) { //makes sure that move wont get an "unvalid" value
 			dir=3;
 		}
 	}
@@ -74,8 +86,8 @@ public abstract class car implements Movable {
 	@Override
 	public void turnRight() {
 		dir++;
-		if (dir > 3) {
-			dir=0;
+		if (dir > 3) { //makes sure that move wont get an "unvalid" value
+			dir=0; 
 		}
 	}
 

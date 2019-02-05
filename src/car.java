@@ -70,9 +70,7 @@ public abstract class car implements Movable {
 	public void brake(double amount) {
 		decrementSpeed(amount);
 	}
-	/**
-	 * Moves the car in the current direction
-	 */
+	
 	@Override
 	public void move() {
 		if (dir==0) {  //checking what direction the car currently is moving and moves it accordingly

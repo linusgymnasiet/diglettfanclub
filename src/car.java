@@ -8,7 +8,7 @@ public abstract class car implements Movable {
 	public String modelName; // The car model name
 	public double xpos;
 	public double ypos;
-	public int dir;
+	public int dir = 0; //0=up 1=right 2=down 3=left
 
 	public double getEnginePower() {
 		return enginePower;
@@ -50,18 +50,33 @@ public abstract class car implements Movable {
 
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
-
+		if (dir==0) {
+			xpos -= currentSpeed;
+		} else if (dir==1) {
+			ypos += currentSpeed;
+		} else if (dir==2) {
+			xpos += currentSpeed;
+		} else if (dir==3) {
+			ypos -= currentSpeed;
+		} else {
+			System.out.println("unvalid direction");
+		}
 	}
 
 	@Override
 	public void turnLeft() {
 		dir--;
+		if (dir < 0) {
+			dir=3;
+		}
 	}
 
 	@Override
 	public void turnRight() {
 		dir++;
+		if (dir > 3) {
+			dir=0;
+		}
 	}
 
 }

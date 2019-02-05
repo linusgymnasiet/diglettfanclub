@@ -27,23 +27,7 @@ public class Saab95 extends car{
 		return enginePower * 0.01 * turbo;
 	}
 
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void turnLeft() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void turnRight() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 
 	

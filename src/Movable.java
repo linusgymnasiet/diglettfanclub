@@ -6,6 +6,10 @@ public interface Movable {
     void turnLeft();
     void turnRight();
     
+    void gas();
+    void break();
+    
+    
     //Hej jag heter Mattis :o
 
 	

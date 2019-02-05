@@ -41,25 +41,38 @@ public abstract class car implements Movable {
 	public abstract double speedFactor();
 
 	/**
-	 * 
+	 * increases the current speed of the car
 	 * @param amount
 	 */
 	public void incrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 	}
-
+	/**
+	 * Decreases the current speed of the car
+	 * @param amount
+	 */
 	public void decrementSpeed(double amount) {
 		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 	}
-
+	
+	/**
+	 * Speeds up the car
+	 * @param amount
+	 */
 	public void gas(double amount) {
 		incrementSpeed(amount);
 	}
-
+	
+	/**
+	 * slows doent the car
+	 * @param amount
+	 */
 	public void brake(double amount) {
 		decrementSpeed(amount);
 	}
-
+	/**
+	 * Moves the car in the current direction
+	 */
 	@Override
 	public void move() {
 		if (dir==0) {  //checking what direction the car currently is moving and moves it accordingly

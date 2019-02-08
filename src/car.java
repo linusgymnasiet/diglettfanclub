@@ -20,7 +20,7 @@ public abstract class car implements Movable {
 		return currentSpeed;
 	}
 	/**
-	 * Returns the colour of the car
+	 * Returns the color of the car
 	 */
 	public Color getColor() {
 		return color;

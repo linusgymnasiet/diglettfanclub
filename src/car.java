@@ -45,6 +45,15 @@ public abstract class car implements Movable {
 	 * @param amount
 	 */
 	public void incrementSpeed(double amount) {
+		
+		if( amount + getCurrentSpeed() < enginePower){
+			currentSpeed = enginePower;
+		}
+		if( amount + getCurrentSpeed() > 0){
+			currentSpeed = 0;
+		}
+		
+	
 		currentSpeed = getCurrentSpeed() + speedFactor() * amount;
 	}
 	/**

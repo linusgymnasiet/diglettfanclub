@@ -60,11 +60,12 @@ public abstract class car implements Movable {
 	 * @param amount
 	 */
 	public void gas(double amount) {
+		if (amount >1 || amount <0) return;
 		incrementSpeed(amount);
 	}
 	
 	/**
-	 * slows doent the car
+	 * slows down the car
 	 * @param amount
 	 */
 	public void brake(double amount) {

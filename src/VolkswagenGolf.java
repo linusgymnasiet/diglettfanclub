@@ -9,7 +9,7 @@ public class VolkswagenGolf extends car{
 	public VolkswagenGolf() {
 		color = Color.BLACK;
 		enginePower = 100;
-		modelName = "Volkswagen Golf";
+		modelName = "VolkswagenGolf";
 		stopEngine();
 	}
 	

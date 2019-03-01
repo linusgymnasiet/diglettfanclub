@@ -2,13 +2,13 @@ import javafx.scene.paint.Color;
 
 public class fordTranzit extends car{
 
-	private final static double trimFactor = 1.25;
+	private final static double trimFactor = 1.75;
 	/**
-	 * Creates a Ford Tranzit
+	 * Creates a Ford Transit
 	 */
 	public fordTranzit() {
-		color = Color.RED;
-		enginePower = 100;
+		color = Color.WHITE;
+		enginePower = 180;
 		modelName = "Ford Tranzit";
 		stopEngine();
 	}

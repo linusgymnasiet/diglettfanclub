@@ -1,3 +1,4 @@
+package car;
 import javafx.scene.paint.Color;
 
 public class Saab95 extends car{
@@ -7,10 +8,8 @@ public class Saab95 extends car{
 	 * Creates a saab95
 	 */
 	public Saab95() {
-		color = Color.BLACK;
-		enginePower = 125;
+		super(Color.BLACK, 125, "Saab95");
 		turboOn = false;
-		modelName = "Saab95";
 		stopEngine();
 	}
 	/**

@@ -1,15 +1,14 @@
+package car;
 import javafx.scene.paint.Color;
 
-public class VolkswagenGolf extends car{
+public class Volvo740 extends car{
 
 	private final static double trimFactor = 1.25;
 	/**
-	 * Creates a Volkswagen Golf
+	 * Creates a volvo740
 	 */
-	public VolkswagenGolf() {
-		color = Color.BLACK;
-		enginePower = 100;
-		modelName = "VolkswagenGolf";
+	public Volvo740() {
+		super(Color.RED, 100, "Volvo740");
 		stopEngine();
 	}
 	

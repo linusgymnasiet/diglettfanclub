@@ -1,3 +1,4 @@
+package car;
 import javafx.scene.paint.Color;
 
 public class fordTranzit extends car{
@@ -7,9 +8,8 @@ public class fordTranzit extends car{
 	 * Creates a Ford Transit
 	 */
 	public fordTranzit() {
-		color = Color.WHITE;
-		enginePower = 180;
-		modelName = "Ford Tranzit";
+		
+		super(Color.WHITE, 180, "Ford Tranzit");
 		stopEngine();
 	}
 	

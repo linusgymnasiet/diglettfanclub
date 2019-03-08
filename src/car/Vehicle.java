@@ -1,7 +1,8 @@
+package car;
 import javafx.scene.paint.Color;
 
-public abstract class car implements Movable {
-
+public abstract class Vehicle implements Movable{
+	
 	public double enginePower; // Engine power of the car
 	public double currentSpeed; // The current speed of the car
 	public Color color; // Color of the car
@@ -9,6 +10,12 @@ public abstract class car implements Movable {
 	public double xpos;
 	public double ypos;
 	public int dir = 0; //0=up 1=right 2=down 3=left
+	
+	public Vehicle(Color c, double ep, String m) {
+		color = c;
+		modelName = m;
+		enginePower = ep;
+	}
 
 	public double getEnginePower() {
 		return enginePower;
@@ -82,7 +89,6 @@ public abstract class car implements Movable {
 		decrementSpeed(amount);
 	}
 	
-	@Override
 	public void move() {
 		if (dir==0) {  //checking what direction the car currently is moving and moves it accordingly
 			xpos -= currentSpeed;
@@ -97,7 +103,6 @@ public abstract class car implements Movable {
 		}
 	}
 
-	@Override
 	public void turnLeft() {
 		dir--;
 		if (dir < 0) { //makes sure that move wont get an "unvalid" value
@@ -105,12 +110,12 @@ public abstract class car implements Movable {
 		}
 	}
 
-	@Override
 	public void turnRight() {
 		dir++;
 		if (dir > 3) { //makes sure that move wont get an "unvalid" value
 			dir=0; 
 		}
 	}
-
+	
+	
 }

@@ -2,21 +2,19 @@ package car;
 
 
 import javafx.scene.paint.Color;
-public class Scania extends truck{
-	
-		private final static double trimFactor = 1.25;
-	/**
-	 * Creates a Scania
-	 */
-	public Scania() {
-		color = Color.BLACK;
-		enginePower = 100;
-		modelName = "Scania";
-		stopEngine();
+public abstract class Scania extends truck{
+
+	public Scania(Color c, double ep, String m) {
+		super(c, ep, m);
+		// TODO Auto-generated constructor stub
 	}
 	
-	public double speedFactor() {
-		return enginePower * 0.01 * trimFactor;
+	Flatbed flat = new Flatbed();
+	
+	public void move() {
+		if (flat.getFlatbedAngle() == 0) {
+			
+		}
 	}
 	
 }

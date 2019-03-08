@@ -8,9 +8,4 @@ public truck(Color c, double ep, String m) {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	
-	if( !getflatbedangle == 0 ){
-		stopEngine();
-	}
 }

@@ -25,5 +25,16 @@ public class Ferry extends Vehicle {
 	public double speedFactor() {
 		return getEnginePower() * 0.002;
 	}
-
+	
+	
+	public void unloadOne() {
+		vehicleLoader.unloadFirstVehicle();
+	}
+	
+	public void unloadAll() {
+		for(int i = 0 ; i < vehicleLoader.vehicles.size() ; i++ ) {
+			vehicleLoader.unloadFirstVehicle();
+		}
+	}
+	
 }

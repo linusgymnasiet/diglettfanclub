@@ -8,4 +8,6 @@ public truck(Color c, double ep, String m) {
 		// TODO Auto-generated constructor stub
 	}
 
+	Flatbed flat = new Flatbed();
+
 }

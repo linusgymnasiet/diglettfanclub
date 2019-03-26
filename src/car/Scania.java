@@ -9,11 +9,9 @@ public abstract class Scania extends truck{
 		// TODO Auto-generated constructor stub
 	}
 	
-	Flatbed flat = new Flatbed();
-	
 	public void move() {
 		if (flat.getFlatbedAngle() == 0) {
-			
+			super.move();
 		}
 	}
 	

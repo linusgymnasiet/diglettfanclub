@@ -4,15 +4,15 @@ public class Flatbed {
 
 	public static int flatbedAngle; // the angle of the flatbed
 	
-	public static int getFlatbedAngle(){
+	public int getFlatbedAngle(){
 		return flatbedAngle;
 	}
 	
-	public static void raiseFlatbed(int faltbedamount){
+	public static void raiseFlatbed(int faltbedamount, Flatbed flat){
 		
-		if ( (getFlatbedAngle() + faltbedamount <= 70) && (getFlatbedAngle() + faltbedamount > 0)){
+		if ( (flat.getFlatbedAngle() + faltbedamount <= 70) && (flat.getFlatbedAngle() + faltbedamount > 0)){
 		
-		flatbedAngle = getFlatbedAngle() + faltbedamount;
+		flatbedAngle = flat.getFlatbedAngle() + faltbedamount;
 		}
 	}
 }

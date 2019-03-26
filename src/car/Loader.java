@@ -33,4 +33,5 @@ public class Loader {
 			vehicle.setY(y);
 		}
 	}
+	
 }

@@ -27,7 +27,7 @@ public class Loader {
 		return v;
 	}
 	
-	public void position(double x, double y) {
+	public void updatePosition(double x, double y) {
 		for (Vehicle vehicle : vehicles) {
 			vehicle.setX(x);
 			vehicle.setY(y);

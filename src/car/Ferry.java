@@ -15,7 +15,11 @@ public class Ferry extends Vehicle {
 		vehicleLoader.load(v);
 	}
 	
-	
+	@Override
+	public void move() {
+		super.move();
+		vehicleLoader.updatePosition(this.getX(), this.getY());
+	}
 	
 	@Override
 	public double speedFactor() {

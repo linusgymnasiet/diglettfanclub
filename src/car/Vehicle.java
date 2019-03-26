@@ -102,6 +102,23 @@ public abstract class Vehicle implements Movable{
 			System.out.println("unvalid direction"); //in the rare case that something goes wrong
 		}
 	}
+	
+	public double getX() {
+		return xpos;
+	}
+	
+	public double getY() {
+		return ypos;
+	}
+	
+	public void setX(double x) {
+		xpos = x;
+	}
+	
+	public void setY(double y) {
+		ypos = y;
+	}
+
 
 	public void turnLeft() {
 		dir--;

@@ -2,7 +2,7 @@ package car;
 
 import java.util.ArrayList;
 
-public abstract class Load {
+public class Loader {
 	
 	ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
 	
@@ -10,14 +10,18 @@ public abstract class Load {
 	 * unloadVehicle1 = första bilen
 	 */
 	
+	
+	public void load(Vehicle v) {
+		vehicles.add(v);
+	}
 		
-	public Vehicle unloadVehicle2() {
+	public Vehicle unloadLastVehicle() {
 		Vehicle v = vehicles.get(vehicles.size()-1);
 		vehicles.remove(v);
 		return v;
 	}
 	
-	public Vehicle unloadVehicle1() {
+	public Vehicle unloadFirstVehicle() {
 		Vehicle v = vehicles.get(0);
 		vehicles.remove(v);
 		return v;

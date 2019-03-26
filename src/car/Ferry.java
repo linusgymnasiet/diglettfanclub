@@ -1,23 +1,25 @@
 package car;
 
-public class Ferry {
+import javafx.scene.paint.Color;
+
+public class Ferry extends Vehicle {
+
+	private Loader vehicleLoader;
+
+	public Ferry() {
+		super(Color.WHITE, 500, "Stena Line");
+		vehicleLoader = new Loader();
+	}
+
+	public void loadVehicle(Vehicle v) {
+		vehicleLoader.load(v);
+	}
 	
-	private Load vehicleLoader;
 	
 	
 	@Override
-	public double currentSpeed() {
-		return enginePower * 0.00;
+	public double speedFactor() {
+		return getEnginePower() * 0.002;
 	}
-	
-	public Vehicle unloadVehicle() {
-		
-	}
-	
-   
-	@Override
-	public void move() {
-		
-	}	
-	
+
 }

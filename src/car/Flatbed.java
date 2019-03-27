@@ -8,11 +8,16 @@ public class Flatbed {
 		return flatbedAngle;
 	}
 	
-	public static void raiseFlatbed(int faltbedamount, Flatbed flat){
-		
+	public void raiseFlatbed(int faltbedamount, Flatbed flat){	
 		if ( (flat.getFlatbedAngle() + faltbedamount <= 70) && (flat.getFlatbedAngle() + faltbedamount > 0)){
-		
 		flatbedAngle = flat.getFlatbedAngle() + faltbedamount;
 		}
 	}
+	
+	public void lowerFlatbed(int amount, Flatbed flat) {
+		if ( (flatbedAngle - amount >= 70) && (flatbedAngle - amount < 0)){
+			flatbedAngle = flat.getFlatbedAngle() + amount;
+			}
+	}
+	
 }

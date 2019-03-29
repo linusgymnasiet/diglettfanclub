@@ -53,10 +53,10 @@ public abstract class Vehicle implements Movable{
 	 */
 	public void incrementSpeed(double amount) {
 		
-		if( amount + getCurrentSpeed() < enginePower){
+		if( amount + getCurrentSpeed() > enginePower){
 			currentSpeed = enginePower;
 		}
-		if( amount + getCurrentSpeed() > 0){
+		if( amount + getCurrentSpeed() < 0){
 			currentSpeed = 0;
 		}
 		
@@ -68,7 +68,8 @@ public abstract class Vehicle implements Movable{
 	 * @param amount
 	 */
 	public void decrementSpeed(double amount) {
-		currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+		if (getCurrentSpeed() <= 0) currentSpeed = 0;
+		else currentSpeed = getCurrentSpeed() - speedFactor() * amount;
 	}
 	
 	/**

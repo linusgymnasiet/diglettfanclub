@@ -1,7 +1,7 @@
 package controller;
 
 import javafx.animation.AnimationTimer;
-import car.Vehicle;
+import car.Vehicle; //förvänade sig att hitta Vehicle i mappen model men den var i mappen car
 import view.CarPane;
 
 public class CarController {

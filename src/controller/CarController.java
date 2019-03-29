@@ -1,7 +1,7 @@
 package controller;
 
 import javafx.animation.AnimationTimer;
-import model.Vehicle;
+import car.Vehicle;
 import view.CarPane;
 
 public class CarController {
@@ -29,6 +29,10 @@ public class CarController {
 
 	public void gas(double amount) {
 		model.gas(amount);
+	}
+	
+	public void brake(double amount) {
+		model.brake(amount);
 	}
 
 }

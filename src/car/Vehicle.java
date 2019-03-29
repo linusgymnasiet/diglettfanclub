@@ -9,7 +9,7 @@ public abstract class Vehicle implements Movable{
 	public String modelName; // The car model name
 	public double xpos;
 	public double ypos;
-	public int dir = 0; //0=up 1=right 2=down 3=left
+	public int dir = 0; //0=right 1=down 2=left 3=up
 	
 	public Vehicle(Color c, double ep, String m) {
 		color = c;
@@ -91,11 +91,11 @@ public abstract class Vehicle implements Movable{
 	
 	public void move() {
 		if (dir==0) {  //checking what direction the car currently is moving and moves it accordingly
-			xpos -= currentSpeed;
+			xpos += currentSpeed;
 		} else if (dir==1) {
 			ypos += currentSpeed;
 		} else if (dir==2) {
-			xpos += currentSpeed;
+			xpos -= currentSpeed;
 		} else if (dir==3) {
 			ypos -= currentSpeed;
 		} else {

@@ -28,7 +28,9 @@ public class App extends Application {
 		cc.setModel(model);
 
 		Vehicle modelsaab = new Saab95();
+		modelsaab.setY(60);
 		cc.setModel(modelsaab);
+		
 		
 		ButtonBox cbp = new ButtonBox(cc);
 

@@ -1,6 +1,7 @@
 package controller;
 
 import javafx.animation.AnimationTimer;
+import main.App;
 import car.Vehicle; //förvänade sig att hitta Vehicle i mappen model men den var i mappen car
 import view.CarPane;
 
@@ -8,17 +9,29 @@ public class CarController {
 
 	private Vehicle model;
 
-	public CarController(CarPane cp) {
-
+	public CarController(CarPane cp) { //dim 100x60
 		AnimationTimer at = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
+				if(model.getX() > App.WIDTH - 100 || model.getX() < 0) {
+					model.turnLeft();
+					model.turnLeft();
+					model.move();
+					model.stopEngine();
+				}
+				
 				if (model != null) {
 					model.move();
 					cp.move(model.getX(), model.getY());
 					cp.update();
 				}
+				
+				
+				
+				
 			}
+			
+			
 		};
 		at.start();
 	}

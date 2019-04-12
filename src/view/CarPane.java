@@ -6,6 +6,7 @@ import javafx.scene.layout.Pane;
 
 public class CarPane extends Pane {
 
+	private ImageView saabImage;
 	private ImageView volvoImage;
 	private double xPos;
 	private double yPos;
@@ -13,6 +14,8 @@ public class CarPane extends Pane {
 	public CarPane() {
 		volvoImage = new ImageView(new Image("/pics/Volvo740.jpg"));
 		this.getChildren().add(volvoImage);
+		saabImage = new ImageView(new Image("/pics/Saab95.jpg"));
+		this.getChildren().add(saabImage);
 	}
 
 	public void move(double x, double y) {

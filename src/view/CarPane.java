@@ -8,8 +8,8 @@ public class CarPane extends Pane {
 
 	private ImageView saabImage;
 	private ImageView volvoImage;
-	private double xPos;
-	private double yPos;
+	private double volvoXPos, saabXPos;
+	private double volvoYPos, saabYPos;
 
 	public CarPane() {
 		volvoImage = new ImageView(new Image("/pics/Volvo740.jpg"));
@@ -18,14 +18,22 @@ public class CarPane extends Pane {
 		this.getChildren().add(saabImage);
 	}
 
-	public void move(double x, double y) {
-		xPos = x;
-		yPos = y;
+	public void move(double x, double y, String model) {
+
+		if(model == "Volvo740") {
+		volvoXPos = x;
+		volvoYPos = y;
+		} else if (model == "Saab95") {
+		saabXPos = x;
+		saabYPos = y;
+		}
 	}
 
 	public void update() {
-		volvoImage.setX(xPos);
-		volvoImage.setTranslateY(yPos);
+		volvoImage.setX(volvoXPos);
+		volvoImage.setTranslateY(volvoYPos);
+		saabImage.setX(saabXPos);
+		saabImage.setTranslateY(saabYPos);
 	}
 
 }

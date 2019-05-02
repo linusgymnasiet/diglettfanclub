@@ -26,7 +26,7 @@ public class Saab95 extends car{
 	}
 
 	public double speedFactor() {
-		double turbo = 1;
+		double turbo = 2;
 		if (turboOn)
 			turbo = 1.3;
 		return enginePower * 0.01 * turbo;

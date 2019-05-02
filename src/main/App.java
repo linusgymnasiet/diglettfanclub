@@ -25,11 +25,11 @@ public class App extends Application {
 		CarController cc = new CarController(cp);
 
 		Vehicle model = new Volvo740();
-		cc.setModel(model);
+		cc.addVehicle(model);
 
 		Vehicle modelsaab = new Saab95();
 		modelsaab.setY(60);
-		cc.setModel(modelsaab);
+		cc.addVehicle(modelsaab);
 		
 		
 		ButtonBox cbp = new ButtonBox(cc);

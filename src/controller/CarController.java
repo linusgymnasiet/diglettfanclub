@@ -9,54 +9,53 @@ import car.Vehicle; //förvänade sig att hitta Vehicle i mappen model men den var
 import view.CarPane;
 
 public class CarController {
-	
-	private ArrayList<Vehicle> models = new ArrayList<Vehicle>();
-	
-	private Vehicle model;
 
-	public CarController(CarPane cp) { //dim 100x60
+	private ArrayList<Vehicle> models = new ArrayList<Vehicle>();
+
+	public CarController(CarPane cp) { // dim 100x60
 		AnimationTimer at = new AnimationTimer() {
 			@Override
 			public void handle(long now) {
-				if(model.getX() > App.WIDTH - 100 || model.getX() < 0) {
-					model.turnLeft();
-					model.turnLeft();
-					model.move();
-					model.stopEngine();
+				for (Vehicle vehicle : models) {
+
+					if (vehicle.getX() > App.WIDTH - 100 || vehicle.getX() < 0) {
+						vehicle.turnLeft();
+						vehicle.turnLeft();
+						vehicle.move();
+						vehicle.stopEngine();
+					}
+
+					if (vehicle != null) {
+						vehicle.move();
+						cp.move(vehicle.getX(), vehicle.getY(),vehicle.getModelName());
+						cp.update();
+					}
 				}
-				
-				if (model != null) {
-					model.move();
-					cp.move(model.getX(), model.getY());
-					cp.update();
-				}
-				
-				
-				
-				
+
 			}
-			
-			
+
 		};
 		at.start();
 	}
 
-	public void setModel(Vehicle v) {	
-		model = v;
+	public void addVehicle(Vehicle v) {
+		models.add(v);
 	}
 
 	public void gas(double amount) {
-		model.gas(amount);
+		for (Vehicle vehicle : models) {
+			vehicle.gas(amount);
+			System.out.println(vehicle.getClass().getSimpleName() + " GAS");
+		}
 	}
-	
+
 	public void brake(double amount) {
-		model.brake(amount);
+		for (Vehicle vehicle : models) {
+			vehicle.brake(amount);
+
+		}
 	}
-	
-	public void addVehicle(Vehicle mod) {
-		models.add(mod);
-	}
-	
+
 	public Vehicle getVehicle(int i) {
 		return models.get(i);
 	}

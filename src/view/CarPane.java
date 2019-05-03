@@ -6,16 +6,19 @@ import javafx.scene.layout.Pane;
 
 public class CarPane extends Pane {
 
+	private ImageView scaniaImage;
 	private ImageView saabImage;
 	private ImageView volvoImage;
-	private double volvoXPos, saabXPos;
-	private double volvoYPos, saabYPos;
+	private double volvoXPos, saabXPos, scaniaXPos;
+	private double volvoYPos, saabYPos , scaniaYPos;
 
 	public CarPane() {
 		volvoImage = new ImageView(new Image("/pics/Volvo740.jpg"));
 		this.getChildren().add(volvoImage);
 		saabImage = new ImageView(new Image("/pics/Saab95.jpg"));
 		this.getChildren().add(saabImage);
+		scaniaImage = new ImageView(new Image("/pics/Scania.jpg"));
+		this.getChildren().add(scaniaImage);
 	}
 
 	public void move(double x, double y, String model) {
@@ -27,6 +30,10 @@ public class CarPane extends Pane {
 		saabXPos = x;
 		saabYPos = y;
 		}
+		 else if (model == "Scania") {
+				scaniaXPos = x;
+				scaniaYPos = y;
+				}
 	}
 
 	public void update() {
@@ -34,6 +41,9 @@ public class CarPane extends Pane {
 		volvoImage.setTranslateY(volvoYPos);
 		saabImage.setX(saabXPos);
 		saabImage.setTranslateY(saabYPos);
+		scaniaImage.setX(scaniaXPos);
+		scaniaImage.setTranslateY(scaniaYPos);
+		
 	}
 
 }
